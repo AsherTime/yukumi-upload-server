@@ -1,8 +1,8 @@
 {
   "name": "upload-server",
   "version": "1.0.0",
-  "type": "module",
-  "main": "upload-server.ts",
+  "main": "dist/upload-server.js",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "start": "node dist/upload-server.js"
