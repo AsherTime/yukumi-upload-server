@@ -4,7 +4,8 @@
   "type": "module",
   "main": "upload-server.ts",
   "scripts": {
-    "start": "ts-node upload-server.ts"
+    "build": "tsc",
+    "start": "node dist/upload-server.js"
   },
   "dependencies": {
     "dotenv": "^16.6.1",
