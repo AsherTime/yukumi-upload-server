@@ -5,6 +5,7 @@ import sharp from "sharp";
 import ImageKit from "imagekit";
 import { v4 as uuidv4 } from "uuid";
 import dotenv from "dotenv";
+import { Request, Response } from "express";
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ const imagekit = new ImageKit({
   urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT!,
 });
 
-app.post("/upload", upload.single("file"), async (req, res) => {
+app.post("/upload", upload.single("file"), async (req: Request, res: Response) => {
   try {
     const { quality, width, height, folder } = req.body;
 
