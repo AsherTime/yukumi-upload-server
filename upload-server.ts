@@ -54,3 +54,14 @@ const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Upload server running on port ${port}`);
 });
+
+app.get("/imagekit-auth", (_req, res) => {
+  try {
+    const authParams = imagekit.getAuthenticationParameters();
+    res.json(authParams);
+  } catch (error) {
+    console.error("ImageKit auth error:", error);
+    res.status(500).json({ error: "Failed to get authentication parameters" });
+  }
+});
+
